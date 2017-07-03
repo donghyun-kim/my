@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Socket">
+      <UniqueIdentifier>{7a9b47e2-7a49-4aef-829e-daef2636297a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Proactor">
+      <UniqueIdentifier>{d7c6e2cb-411d-4408-90bf-0cafa03fc033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Base">
+      <UniqueIdentifier>{db071ad4-e8d7-4b3b-b17e-c1edfba86e8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Socket\TCP">
+      <UniqueIdentifier>{f8903018-d6c2-430f-9281-77647eb8e31b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Socket\UDP">
+      <UniqueIdentifier>{9d6fc764-85ed-4f7e-aee8-322e30a16aee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Socket\Base">
+      <UniqueIdentifier>{6b4c4f4c-3380-48c0-adf1-fe4001b1acd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Reactor">
+      <UniqueIdentifier>{8c3b0fb2-5d7a-483e-a4d8-9a182ab844a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Network.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Proactor.h">
+      <Filter>소스 파일\Proactor</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>소스 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPSocket.h">
+      <Filter>소스 파일\Socket\TCP</Filter>
+    </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>소스 파일\Socket\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPSocketPimpl.h">
+      <Filter>소스 파일\Socket\TCP</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>소스 파일\Socket\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>소스 파일\Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Proactor.cpp">
+      <Filter>소스 파일\Proactor</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>소스 파일\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPSocket.cpp">
+      <Filter>소스 파일\Socket\TCP</Filter>
+    </ClCompile>
+    <ClCompile Include="Socket.cpp">
+      <Filter>소스 파일\Socket\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPSocketPimpl.cpp">
+      <Filter>소스 파일\Socket\TCP</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>소스 파일\Socket\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>소스 파일\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
