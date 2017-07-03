@@ -4,28 +4,28 @@
 
 Task::Task()
 {
-	start();
+    start();
 }
 
 Task::~Task()
 {
-	// 
-	//assert(true);
+    // 
+    //assert(true);
 
-	while (true)
-	{
-		Sleep(1);
-		if (Concurrency::agent::status() == Concurrency::agent_done)
-			break;
-	}
+    while (true)
+    {
+        Sleep(1);
+        if (Concurrency::agent::status() == Concurrency::agent_done)
+            break;
+    }
 }
 
 void Task::run()
 {
-	// implement in loop code
-	DoWork();
+    // implement in loop code
+    DoWork();
 
-	// end thread
-	done();
+    // end thread
+    done();
 }
 

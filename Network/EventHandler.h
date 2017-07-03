@@ -3,17 +3,17 @@
 class EventHandler
 {
 public:
-	EventHandler();
-	~EventHandler();
+    EventHandler();
+    ~EventHandler();
 
-	virtual void Success(DWORD bytes_transferred) = 0;
-	virtual void Failed(DWORD error) = 0;
+    virtual void Success(DWORD bytes_transferred) = 0;
+    virtual void Failed(DWORD error) = 0;
 };
 
 class OverlappedEventHandler : public OVERLAPPED, EventHandler
 {
 public:
-	OverlappedEventHandler();
+    OverlappedEventHandler();
 
 };
 

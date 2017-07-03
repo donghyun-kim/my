@@ -18,31 +18,31 @@ TCPSocketAccept::~TCPSocketAccept()
 
 bool TCPSocketAccept::init()
 {
-	DWORD byte_transferred;
+    DWORD byte_transferred;
 
-	BOOL ret = AcceptEx(tcp_socket_.socket_, 
-						tcp_socket_.listen_socket_, 
-						buffer_, 
-						0,
-						sizeof(SOCKADDR_IN) + 16,
-						sizeof(SOCKADDR_IN) + 16,
-						&byte_transferred,
-						static_cast<OVERLAPPED*>(tcp_socket_.action_[TCPSocket::ActionAccept]) );
+    BOOL ret = AcceptEx(tcp_socket_.socket_, 
+                        tcp_socket_.listen_socket_, 
+                        buffer_, 
+                        0,
+                        sizeof(SOCKADDR_IN) + 16,
+                        sizeof(SOCKADDR_IN) + 16,
+                        &byte_transferred,
+                        static_cast<OVERLAPPED*>(tcp_socket_.action_[TCPSocket::ActionAccept]) );
 
-	int error = WSAGetLastError();
+    int error = WSAGetLastError();
 
-	if (ret == FALSE && error != ERROR_IO_PENDING) 
-		return false;
-	
-	return true;
+    if (ret == FALSE && error != ERROR_IO_PENDING) 
+        return false;
+    
+    return true;
 }
 
 void TCPSocketAccept::Success( DWORD bytes_transferred )
 {
-	// next recv?
+    // next recv?
 }
 
 void TCPSocketAccept::Failed( DWORD error )
 {
-	// error
+    // error
 }

@@ -4,11 +4,11 @@
 class Task : public Concurrency::agent
 {
 public:
-	Task();
-	~Task();
+    Task();
+    ~Task();
 
-	virtual void DoWork() = 0;
+    virtual void DoWork() = 0;
 
 private:
-	void run() override;
+    void run() override;
 };

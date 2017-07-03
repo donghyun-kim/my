@@ -5,30 +5,30 @@
 class Proactor : public Actor
 {
 public:
-	Proactor();
-	virtual ~Proactor();
+    Proactor();
+    virtual ~Proactor();
 
-	bool Initialize();
-	void Finalize();
+    bool Initialize();
+    void Finalize();
 
-	bool Register(HANDLE handle);
+    bool Register(HANDLE handle);
 
 private:
-	class Processor : Task
-	{
-	public:
-		Processor(bool& loop_state, HANDLE& proactor_handle);
-		virtual ~Processor();
+    class Processor : Task
+    {
+    public:
+        Processor(bool& loop_state, HANDLE& proactor_handle);
+        virtual ~Processor();
 
-	private:
-		virtual void DoWork() override;
+    private:
+        virtual void DoWork() override;
 
-		bool loop_state_;
-		HANDLE& proactor_handle_;
-	};
+        bool loop_state_;
+        HANDLE& proactor_handle_;
+    };
 
-	bool loop_state_;
-	HANDLE iocp_handle_;
-	DWORD spwan_thread_;
-	std::vector<Processor*> processors_;
+    bool loop_state_;
+    HANDLE iocp_handle_;
+    DWORD spwan_thread_;
+    std::vector<Processor*> processors_;
 };

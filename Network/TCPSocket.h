@@ -5,31 +5,31 @@ class Actor;
 class TCPSocket 
 {
 public:
-	TCPSocket(Actor& proactor);
-	virtual ~TCPSocket();
+    TCPSocket(Actor& proactor);
+    virtual ~TCPSocket();
 
-	bool Init();
+    bool Init();
 
-	bool Send();
-	bool Recv();
+    bool Send();
+    bool Recv();
 
 private:
-	friend class TCPSocketAccept;
+    friend class TCPSocketAccept;
 
-	enum ActionType
-	{
-		ActionAccept,
-		ActionSend,
-		ActionRecv,
-		ActionDisconnect,
-		ActionMax,
-	};
+    enum ActionType
+    {
+        ActionAccept,
+        ActionSend,
+        ActionRecv,
+        ActionDisconnect,
+        ActionEnd,
+    };
 
-	class Action;
-	Action* action_[ActionMax];
+    class Action;
+    Action* action_[ActionEnd];
 
-	Proactor& proactor_;
-	SOCKET socket_;
-	SOCKET listen_socket_;
+    Proactor& proactor_;
+    SOCKET socket_;
+    SOCKET listen_socket_;
 };
 

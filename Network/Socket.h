@@ -3,17 +3,17 @@
 class Socket 
 {
 public:
-	enum Type
-	{
-		TCP,
-		UDP,
-	};
+    enum Type
+    {
+        TCP,
+        UDP,
+    };
 
-	Socket();
-	virtual ~Socket();
+    Socket();
+    virtual ~Socket();
 
-	bool Initialize(Type type);
+    bool Initialize(Type type);
 
 private:
-	SOCKET listen_socket_;
+    SOCKET listen_socket_;
 };

@@ -4,11 +4,11 @@
 
 Network::Network(const WCHAR* ip_addres, unsigned short port)
 {
-	proactor_ = new Proactor();
-	tcp_socket_ = new TCPSocket(*proactor_);
+    proactor_ = new Proactor();
+    tcp_socket_ = new TCPSocket(*proactor_);
 }
 
 Network::~Network()
 {
-	
+    
 }
