@@ -14,7 +14,7 @@ Proactor::~Proactor()
 
 bool Proactor::Initialize()
 {
-    spwan_thread_ = 4;
+    spwan_thread_ = 1;
     iocp_handle_ = CreateIoCompletionPort(INVALID_HANDLE_VALUE, nullptr, 0, spwan_thread_);
 
     if (iocp_handle_ == nullptr)
@@ -23,12 +23,11 @@ bool Proactor::Initialize()
     loop_state_ = true;
 
     // n개 이상으로 process 를 만들도록 한다
-
-    processors_.reserve(spwan_thread_);
+    //processors_.reserve(spwan_thread_);
 
     for (DWORD count = 0; count < spwan_thread_; ++count)
     {
-        processors_[count] = new Processor(loop_state_, iocp_handle_); 
+        processors_.push_back(new Processor(loop_state_, iocp_handle_)); 
     }
 
     return true;

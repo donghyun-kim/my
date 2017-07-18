@@ -91,6 +91,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <Lib>
+      <AdditionalDependencies>mswsock.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -123,26 +126,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Actor.h" />
+    <ClInclude Include="ActorBase.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Proactor.h" />
     <ClInclude Include="Network.h" />
-    <ClInclude Include="Socket.h" />
+    <ClInclude Include="SocketBase.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TCPSocket.h" />
-    <ClInclude Include="TCPSocketPimpl.h" />
+    <ClInclude Include="OverlapdSocket.h" />
+    <ClInclude Include="OverlapdSocketPimpl.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Proactor.cpp" />
     <ClCompile Include="Network.cpp" />
-    <ClCompile Include="Socket.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -150,8 +148,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Task.cpp" />
-    <ClCompile Include="TCPSocket.cpp" />
-    <ClCompile Include="TCPSocketPimpl.cpp" />
+    <ClCompile Include="OverlapdSocket.cpp" />
+    <ClCompile Include="OverlapdSocketPimpl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

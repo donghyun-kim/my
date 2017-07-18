@@ -1,15 +1,15 @@
 #pragma once
-#include "Actor.h"
+#include "ActorBase.h"
 #include "Task.h"
 
-class Proactor : public Actor
+class Proactor : public ActorBase
 {
 public:
     Proactor();
-    virtual ~Proactor();
+    virtual ~Proactor() override;
 
-    bool Initialize();
-    void Finalize();
+    virtual bool Initialize() override;
+    virtual void Finalize() override;
 
     bool Register(HANDLE handle);
 

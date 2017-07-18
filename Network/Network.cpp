@@ -1,11 +1,15 @@
 #include "stdafx.h"
 #include "Network.h"
-#include "TCPSocket.h"
+#include "Proactor.h"
+#include "OverlapdSocket.h"
 
 Network::Network(const WCHAR* ip_addres, unsigned short port)
 {
-    proactor_ = new Proactor();
-    tcp_socket_ = new TCPSocket(*proactor_);
+    actor_ = new Proactor();
+    socket_ = new OverlapdSocketBase(*actor_);
+
+    actor_->Initialize();
+    socket_->Initialize();
 }
 
 Network::~Network()

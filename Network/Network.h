@@ -2,8 +2,8 @@
 #include "Proactor.h"
 #include "Listener.h"
 
-class Proactor;
-class TCPSocket;
+class ActorBase;
+class SocketBase;
 
 class Network
 {
@@ -12,6 +12,6 @@ public:
     ~Network();
 
 private:
-    Proactor* proactor_;
-    TCPSocket* tcp_socket_;
+    ActorBase* actor_;
+    SocketBase* socket_;
 };

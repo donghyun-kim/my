@@ -6,6 +6,11 @@ EventHandler::EventHandler()
 
 }
 
+EventHandler::~EventHandler()
+{
+
+}
+
 OverlappedEventHandler::OverlappedEventHandler()
 {
     hEvent = nullptr;

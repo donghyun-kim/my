@@ -5,7 +5,7 @@ class Task : public Concurrency::agent
 {
 public:
     Task();
-    ~Task();
+    virtual ~Task();
 
     virtual void DoWork() = 0;
 
