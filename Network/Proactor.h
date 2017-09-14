@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "ActorBase.h"
 #include "Task.h"
 

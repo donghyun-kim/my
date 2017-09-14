@@ -27,7 +27,8 @@ bool Proactor::Initialize()
 
     for (DWORD count = 0; count < spwan_thread_; ++count)
     {
-        processors_.push_back(new Processor(loop_state_, iocp_handle_)); 
+        Processor* process = new Processor(loop_state_, iocp_handle_);
+        processors_.push_back(process);
     }
 
     return true;
@@ -75,12 +76,12 @@ void Proactor::Processor::DoWork()
     BOOL result = FALSE;
     DWORD number_of_bytes_transferred = 0;
     PULONG_PTR completion_key = nullptr;
-    LPOVERLAPPED* overlapped = nullptr;
+    LPOVERLAPPED overlapped = nullptr;
 
     while (loop_state_)
     {
         // 완료된 io만을 알 수있음
-        result = GetQueuedCompletionStatus(proactor_handle_, &number_of_bytes_transferred, completion_key, overlapped, INFINITE);
+        result = GetQueuedCompletionStatus(proactor_handle_, &number_of_bytes_transferred, completion_key, &overlapped, INFINITE);
 
         if (completion_key == nullptr)
             break;
@@ -103,6 +104,4 @@ void Proactor::Processor::DoWork()
             event_handler->Failed(0);
         }
     }
-
-    done();
 }

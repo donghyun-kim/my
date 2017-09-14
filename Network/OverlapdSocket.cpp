@@ -4,7 +4,7 @@
 
 #include "Proactor.h"
 
-OverlapdSocketBase::OverlapdSocketBase(ActorBase& actor) : SocketBase(actor),  proactor_(static_cast<Proactor&>(actor))
+OverlapdSocketBase::OverlapdSocketBase(Proactor& actor) : SocketBase(actor),  proactor_(actor)
 , socket_(INVALID_SOCKET), listen_socket_(INVALID_SOCKET)
 {
     action_[ActionAccept] = new AcceptAction(*this, proactor_);
@@ -20,18 +20,22 @@ bool OverlapdSocketBase::Initialize()
     listen_socket_ = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
 
     if (listen_socket_ == INVALID_SOCKET)
+    {
+        int error_code = WSAGetLastError();
         return false;
+    }
 
     SOCKADDR_IN    server_addr;
     server_addr.sin_family = AF_INET;
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     server_addr.sin_port = htons(port);
 
-    // 연결 시켜 오기를 기다리자
     if (bind(listen_socket_, (SOCKADDR*)&server_addr, sizeof(server_addr)) == SOCKET_ERROR)
+    {
+        int error_code = WSAGetLastError();
         return false;
+    }
 
-    // 온것을 알아 차린다
     if (listen(listen_socket_, SOMAXCONN) == SOCKET_ERROR)
         return false;
 

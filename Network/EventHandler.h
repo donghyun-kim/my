@@ -20,6 +20,5 @@ public:
 class PollingEventHandler : public EventHandler
 {
 public:
-    
 
 };

@@ -128,8 +128,11 @@
   <ItemGroup>
     <ClInclude Include="ActorBase.h" />
     <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="Proactor.h" />
     <ClInclude Include="Network.h" />
+    <ClInclude Include="SingletonePattern.h" />
     <ClInclude Include="SocketBase.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="stdafx.h" />
@@ -139,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="Proactor.cpp" />
     <ClCompile Include="Network.cpp" />
     <ClCompile Include="stdafx.cpp">

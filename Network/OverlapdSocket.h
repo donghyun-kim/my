@@ -7,7 +7,7 @@ class Actor;
 class OverlapdSocketBase : public SocketBase
 {
 public:
-    OverlapdSocketBase(ActorBase& actor);
+    OverlapdSocketBase(Proactor& actor);
     virtual ~OverlapdSocketBase() {};
 
     virtual bool Initialize() override;
@@ -35,4 +35,3 @@ private:
 
     Proactor& proactor_;
 };
-

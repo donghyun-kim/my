@@ -2,30 +2,35 @@
 #include "Task.h"
 #include "windows.h"
 
-Task::Task()
+
+void run(Task* task)
 {
-    start();
+    // implement in loop code
+    while (task->IsWork())
+    {
+        task->DoWork();
+    }
+
+    // end thread
+}
+
+Task::Task() : loop_state_(false)
+{
 }
 
 Task::~Task()
 {
-    // 
-    //assert(true);
-
-    while (true)
-    {
-        Sleep(1);
-        if (Concurrency::agent::status() == Concurrency::agent_done)
-            break;
-    }
+    Stop();
 }
 
-void Task::run()
+void Task::Start()
 {
-    // implement in loop code
-    DoWork();
-
-    // end thread
-    done();
+    loop_state_ = true;
+    thread_ = new std::thread(&run, this);
 }
 
+void Task::Stop()
+{
+    loop_state_ = false;
+    delete thread_;
+}

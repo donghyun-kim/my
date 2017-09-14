@@ -11,6 +11,8 @@ public:
     Network(const WCHAR * ip_addres, unsigned short port);
     ~Network();
 
+    bool Initialize();
+
 private:
     ActorBase* actor_;
     SocketBase* socket_;
