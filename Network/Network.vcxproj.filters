@@ -32,6 +32,12 @@
     <Filter Include="소스 파일\Pattern">
       <UniqueIdentifier>{f6ea8f37-2400-486b-ac9d-eb2dd8cb4093}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Log\Impl">
+      <UniqueIdentifier>{71eb60b7-3361-484f-8381-3cb69c85f943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Log\Base">
+      <UniqueIdentifier>{ea331814-46f8-4eb0-b543-1c68da213784}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Network.h">
@@ -64,14 +70,14 @@
     <ClInclude Include="SocketBase.h">
       <Filter>소스 파일\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>소스 파일\Log</Filter>
-    </ClInclude>
     <ClInclude Include="ObserverPattern.h">
       <Filter>소스 파일\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="SingletonePattern.h">
       <Filter>소스 파일\Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>소스 파일\Log\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,8 +102,11 @@
     <ClCompile Include="OverlapdSocketPimpl.cpp">
       <Filter>소스 파일\Socket\TCP</Filter>
     </ClCompile>
+    <ClCompile Include="LogImplGLog.cpp">
+      <Filter>소스 파일\Log\Impl</Filter>
+    </ClCompile>
     <ClCompile Include="Log.cpp">
-      <Filter>소스 파일\Log</Filter>
+      <Filter>소스 파일\Log\Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
